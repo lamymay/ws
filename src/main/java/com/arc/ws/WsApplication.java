@@ -18,7 +18,7 @@ import java.util.Map;
 @SpringBootApplication
 public class WsApplication {
 
-    static ApplicationContext context;
+    public static ApplicationContext context;
 
     public static void main(String[] args) {
         context = SpringApplication.run(WsApplication.class, args);
@@ -32,7 +32,6 @@ public class WsApplication {
 
             Map<Object, Object> map = new HashMap<>();
             map.put("Env", ArcRuntimeEnvironment.getArcRuntimeEnvironment());
-            map.put("context", context);
             return ResponseEntity.ok(map);
         } catch (Exception exception) {
             return ResponseEntity.ok(exception);
