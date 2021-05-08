@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+### eclipse
+.project
+.classpath
+.settings/
+target/
+tags
+logs/
+*.logwebRoot/
+*.zip
+*.tar.gz
+.factorypath
+*.class
+.springBeans
+.mvn/
+/target/classes
+MANIFEST.MF
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+=======
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+>>>>>>> branch 'master' of https://gitee.com/liqi01/badger-spring-cloud.git

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.badger</groupId>
+    <artifactId>badger-spring-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>badger-spring-boot-kafka</module>
+        <module>badger-spring-boot-swagger</module>
+        <module>badger-spring-boot-securty</module>
+        <module>badger-spring-boot-rocketmq</module>
+        <module>badger-spring-boot-websocket</module>
+        <module>badger-spring-boot-websocket-stomp</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <!-- 打包的时候，跳过test测试类 -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

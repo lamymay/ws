@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>test WebSocket sockjs</title>
+</head>
+<body>
+  <input id="text" type="text" />
+  <button onclick="send()">发送</button>
+  <button onclick="disconnect()">关闭</button>
+  <div id="message"></div>
+</body>
+<script src="/sockjs.min.js"></script>
+<script src="/stomp.min.js"></script>
+<script src="/jquery.js"></script>
+<script type="text/javascript">
+    var socket = new SockJS('/ws/message');
+    var stompClient = Stomp.over(socket); // 使用 STOMP 子协议的 WebSocket 客户端
+    stompClient.connect({}, function(frame) {
+        console.log('连接成功: ' + frame);
+        // 通过 stompClient.subscribe 订阅/subject-topic/index 目标发送的信息,对应控制器的 SendTo 定义
+        stompClient.subscribe('/subject-topic/index', function(respnose) {
+            // 订阅消息后，回调内容
+            showResponse("消息回调-->" + respnose.body);
+        });
+    });
+
+    function disconnect() {
+        // 断开连接
+        if (stompClient != null) {
+            stompClient.disconnect();
+        }
+        setConnected(false);
+        console.log("关闭连接");
+    }
+
+    function send() {
+        // 向服务端发送消息
+        var message = $('#text').val();
+        showResponse("发送消息-->" + message);
+        // 通过 stompClient.send 向 /receive （服务端）发送信息，对应控制器 @MessageMapping 中的定义
+        stompClient.send("/receive/index", {}, message);
+    }
+
+    //将消息显示在网页上
+    function showResponse(innerHTML) {
+        var htmlTxt = $('#message').html();
+        $('#message').html(htmlTxt + '<br/>' + innerHTML);
+    }
+</script>
+</html>

@@ -1,0 +1,10 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 2500  #最大线程数
+      min-spare: 500  #最小线程数
+    max-connections: 8196      #最大链接数
+    accept-count: 1000    #最大等待队列长度  默认100
+    connection-timeout: 12000  #链接建立超时时间
+  port: 8080    #服务http端口
