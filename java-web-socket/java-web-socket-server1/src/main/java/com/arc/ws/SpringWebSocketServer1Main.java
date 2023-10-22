@@ -18,6 +18,7 @@ public class SpringWebSocketServer1Main {
     private static final Logger log = LoggerFactory.getLogger(SpringWebSocketServer1Main.class);
 
     /**
+     * Tips：在不使用内嵌容器的时候可以不做以上步骤。
      * 注入ServerEndpointExporter，
      * 这个bean会自动注册使用了@ServerEndpoint注解声明的Websocket endpoint
      */
