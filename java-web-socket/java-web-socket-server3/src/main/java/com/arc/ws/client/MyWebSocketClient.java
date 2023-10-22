@@ -7,8 +7,6 @@ import org.java_websocket.handshake.ServerHandshake;
 import java.net.URI;
 import java.util.Scanner;
 
-import static com.arc.ws.WebSocketConfig.*;
-
 
 public class MyWebSocketClient extends WebSocketClient {
 
@@ -37,7 +35,7 @@ public class MyWebSocketClient extends WebSocketClient {
     }
 
     public static void main(String[] args) {
-        String serverUri = String.format("ws://%s:%s", ip, port);
+        String serverUri = String.format("ws://127.0.0.1:9002/websocket/1");
         MyWebSocketClient client = new MyWebSocketClient(URI.create(serverUri));
         client.connect();
         System.out.println("WebSocket client is connected to " + serverUri);

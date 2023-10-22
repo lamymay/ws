@@ -17,12 +17,12 @@ import java.util.Map;
 
 @RestController
 @SpringBootApplication
-public class SpringWebSocketServer2Main {
+public class SpringWebSocketServerMain2 {
 
-    private static final Logger log = LoggerFactory.getLogger(SpringWebSocketServer2Main.class);
+    private static final Logger log = LoggerFactory.getLogger(SpringWebSocketServerMain2.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringWebSocketServer2Main.class, args);
+        SpringApplication.run(SpringWebSocketServerMain2.class, args);
     }
 
     //    @Resource
