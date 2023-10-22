@@ -1,5 +1,5 @@
 
-package com.arc.ws;
+package com.arc.ws.client;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import static com.arc.ws.sever.MyWebSocketServer.ip;
 import static com.arc.ws.sever.MyWebSocketServer.port;
+
 
 public class MyWebSocketClient extends WebSocketClient {
 
