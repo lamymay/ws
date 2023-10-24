@@ -11,9 +11,9 @@ import static com.arc.ws.sever.MyWebSocketServer.ip;
 import static com.arc.ws.sever.MyWebSocketServer.port;
 
 
-public class MyWebSocketClient extends WebSocketClient {
+public class WebSocketClient1 extends WebSocketClient {
 
-    public MyWebSocketClient(URI serverUri) {
+    public WebSocketClient1(URI serverUri) {
         super(serverUri);
     }
 
@@ -39,7 +39,7 @@ public class MyWebSocketClient extends WebSocketClient {
 
     public static void main(String[] args) {
         String serverUri = String.format("ws://%s:%s", ip, port);
-        MyWebSocketClient client = new MyWebSocketClient(URI.create(serverUri));
+        WebSocketClient1 client = new WebSocketClient1(URI.create(serverUri));
         client.connect();
         System.out.println("WebSocket client is connected to " + serverUri);
 
